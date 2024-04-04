@@ -104,3 +104,6 @@ const filmy = [
 		premiera: '2022-12-24',
 	},
 ]
+
+
+
