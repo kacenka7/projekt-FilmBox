@@ -105,5 +105,24 @@ const filmy = [
 	},
 ]
 
+const filmId = window.location.hash.slice(1);
+
+console.log("bobek")
+
+console.log(filmId)
+
+
+const filmData = filmy.find((film) => film.id === filmId);
+
+
+const nazevFilmu = document.querySelector(".card-title");
+nazevFilmu.innerHTML = filmData.nazev
+
+const popisFilmu = document.querySelector(".card-text");
+
+console.log(popisFilmu)
+popisFilmu = filmData.popis
+
+
 
 

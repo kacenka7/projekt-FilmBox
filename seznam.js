@@ -112,6 +112,7 @@ const seznamFilmu = document.querySelector("#seznam-filmu")
 
 filmy.forEach( (polozka)=> {
 
+
 	seznamFilmu.innerHTML += `
 	
 	<div class="col">
@@ -126,7 +127,7 @@ filmy.forEach( (polozka)=> {
 	   		<div class="card-body">
 		  		<h5 class="card-title">"${polozka.nazev}"</h5>
 		  		<p class="card-text">"${polozka.ochutnavka}"</p>
-		  		<a href="film.html" class="btn btn-primary">Přehrát</a>
+		  		<a href="film.html#${polozka.id}" class="btn btn-primary">Přehrát</a>
 	   		</div>
 		</div>
  	</div>
@@ -134,19 +135,3 @@ filmy.forEach( (polozka)=> {
 	`
 	
 });
-
-
-
-
-/*
-const elBody = document.querySelector("body")
-const articleId = window.location.hash.slice(1)
-const article = articles.find((ar) => ar.id === articleId)
-
-elMain.innerHTML += `
-  <article>
-    <h2>${article.title}</h2>
-    <p>${article.lead}</p>
-    <p>${article.content}</p>
-  </article>
-*/
