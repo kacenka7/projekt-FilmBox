@@ -105,13 +105,9 @@ const filmy = [
 	},
 ]
 
+//5
+
 const filmId = window.location.hash.slice(1);
-
-console.log("bobek")
-
-console.log(filmId)
-
-
 const filmData = filmy.find((film) => film.id === filmId);
 
 
@@ -120,9 +116,105 @@ nazevFilmu.innerHTML = filmData.nazev
 
 const popisFilmu = document.querySelector(".card-text");
 
-console.log(popisFilmu)
-popisFilmu = filmData.popis
+popisFilmu.innerHTML = filmData.popis
 
+const obrazek = document.querySelector(".img-fluid")
+
+obrazek.src = filmData.plakat.url
+
+//6
+
+const idPremiera = document.querySelector("#premiera")
+
+const datumPremiery = dayjs(filmData.premiera).format("D.M.YYYY")
+
+const odPremiery = -1*(dayjs(filmData.premiera).diff(dayjs(), 'days'))
+
+let den = null
+
+if (odPremiery===1){
+	den = `- což bylo před ${odPremiery} dnem`
+}
+else if(odPremiery===0){
+	den=`- dnes je premiéra!`
+}
+else{
+	den=`- což bylo před ${odPremiery} dny`
+}
+
+idPremiera.innerHTML =  `Premiéra <strong> ${datumPremiery}</strong> ${den}`
+
+//7
+
+const hvezdicka = document.querySelector(".fa-star")
+const fceHvezdicky = (pocet)=>{
+	hvezdicka.addEventListener("click"), (fce) => {
+
+		const hodnoceni = 
+	}
+
+		// Projdeme všechny prvky se třídou fa-star
+		var stars = document.querySelectorAll('.fa-star');
+		for (var i = 0; i < stars.length; i++) {
+			// Pokud je pořadí hvězdičky menší nebo rovno zadanému číslu, zvýrazníme ji
+			if (i < num) {
+				stars[i].classList.remove('far');
+				stars[i].classList.add('fas');
+			} else { // Ostatní hvězdičky nezvýrazníme
+				stars[i].classList.remove('fas');
+				stars[i].classList.add('far');
+			}
+		}
+	}
+
+
+
+
+//8
+
+
+
+const formular = document.querySelector("#note-form")
+const pole = document.querySelector("#message-input")
+const checkbox = document.querySelector("#terms-checkbox")
+const poznamka = document.querySelector(".card-text")
+
+
+
+
+formular.addEventListener("submit",(event) => {
+    event.preventDefault()
+
+	// textove pole
+	let obsahPole = document.querySelector(".card-text")
+	obsahPole = pole.value
+
+	if(obsahPole.length > 0) {
+		pole.classList.remove("is-invalid")
+		}
+	else {
+		pole.classList.add("is-invalid")
+		pole.focus()
+		}
+
+	// checkbox
+	var stav = checkbox.checked;
+
+	if (stav === false){
+		console.log("ne");
+		checkbox.classList.add("is-invalid")
+		}
+	else {  
+		console.log("souhlas");
+		checkbox.classList.remove("is-invalid")
+		} 
+
+		//zápis poznámky
+	if (obsahPole.length > 0 && stav !== false){
+
+		poznamka.innerHTML += `<br>Komentář: ${obsahPole}`
+	}
+})
 
 
 
