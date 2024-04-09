@@ -144,31 +144,29 @@ else{
 
 idPremiera.innerHTML =  `Premiéra <strong> ${datumPremiery}</strong> ${den}`
 
+/*
 //7
-
-const hvezdicka = document.querySelector(".fa-star")
-const fceHvezdicky = (pocet)=>{
-	hvezdicka.addEventListener("click"), (fce) => {
-
-		const hodnoceni = 
-	}
 
 		// Projdeme všechny prvky se třídou fa-star
 		var stars = document.querySelectorAll('.fa-star');
-		for (var i = 0; i < stars.length; i++) {
+		
+		stars.addEventListener("click", () => {
+
+			var hodnoceni = 
+
+			for (var i = 0; i < stars.length; i++) {
 			// Pokud je pořadí hvězdičky menší nebo rovno zadanému číslu, zvýrazníme ji
-			if (i < num) {
-				stars[i].classList.remove('far');
-				stars[i].classList.add('fas');
-			} else { // Ostatní hvězdičky nezvýrazníme
-				stars[i].classList.remove('fas');
-				stars[i].classList.add('far');
+				if (i < num) {
+					stars[i].classList.remove('far');
+					stars[i].classList.add('fas');
+				} else { // Ostatní hvězdičky nezvýrazníme
+					stars[i].classList.remove('fas');
+					stars[i].classList.add('far');
+				}
 			}
-		}
-	}
+		})
 
-
-
+*/
 
 //8
 
@@ -215,6 +213,4 @@ formular.addEventListener("submit",(event) => {
 		poznamka.innerHTML += `<br>Komentář: ${obsahPole}`
 	}
 })
-
-
 
